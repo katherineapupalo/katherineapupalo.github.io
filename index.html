@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Lotus - Modern Asian Bistro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(180deg, #e6f3ff 0%, #f0f8ff 100%);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(74,144,226,0.3);
+            border-bottom: 3px solid #2c5aa0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '🪷';
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 550px;
+            background: linear-gradient(135deg, #5b9dd9 0%, #4a90e2 50%, #3b7ac9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🪷 🥢 🍜 🥟 🍱 🪷 🥢 🍜 🥟 🍱';
+            position: absolute;
+            font-size: 2.5rem;
+            top: 15%;
+            animation: slide-left 30s infinite linear;
+            opacity: 0.2;
+            white-space: nowrap;
+        }
+
+        .hero::after {
+            content: '🏮 🎋 🌸 ⛩️ 🍵 🏮 🎋 🌸 ⛩️ 🍵';
+            position: absolute;
+            font-size: 2rem;
+            bottom: 15%;
+            animation: slide-right 35s infinite linear;
+            opacity: 0.2;
+            white-space: nowrap;
+        }
+
+        @keyframes slide-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes slide-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #fff;
+            color: #4a90e2;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 2px solid #ffd700;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+            background: #ffd700;
+            color: #2c5aa0;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c5aa0;
+            font-weight: 700;
+            position: relative;
+        }
+
+        h2::before {
+            content: '🪷';
+            margin-right: 0.5rem;
+        }
+
+        h2::after {
+            content: '🪷';
+            margin-left: 0.5rem;
+        }
+
+        /* Menu Section */
+        #menu {
+            background: #fff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: linear-gradient(135deg, #fff 0%, #e6f3ff 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(74,144,226,0.15);
+            transition: all 0.3s;
+            border: 2px solid #b8d4f1;
+            position: relative;
+        }
+
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 20px;
+            right: 20px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #4a90e2 50%, #ffd700 100%);
+            border-radius: 2px;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(74,144,226,0.25);
+        }
+
+        .menu-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #d4e6f7;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item span:first-child {
+            color: #2d3748;
+        }
+
+        .menu-item span:last-child {
+            color: #4a90e2;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: #f0f8ff;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 6px 30px rgba(74,144,226,0.2);
+            border: 3px solid #4a90e2;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .slide span {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide:nth-child(1) { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .slide:nth-child(2) { background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%); }
+        .slide:nth-child(3) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .slide:nth-child(4) { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .slide:nth-child(5) { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .slide:nth-child(6) { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.95);
+            color: #4a90e2;
+            border: 2px solid #ffd700;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+
+        .slider-btn:hover {
+            background: #ffd700;
+            color: #2c5aa0;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-btn.prev { left: 20px; }
+        .slider-btn.next { right: 20px; }
+
+        .slider-dots {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #b8d4f1;
+            border-radius: 50%;
+            margin: 0 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #4a90e2;
+        }
+
+        .dot:hover {
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background: #4a90e2;
+            transform: scale(1.3);
+        }
+
+        /* About Section */
+        #about {
+            background: #fff;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            background: linear-gradient(135deg, #fff 0%, #e6f3ff 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid #b8d4f1;
+            box-shadow: 0 4px 20px rgba(74,144,226,0.1);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #f0f8ff;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(74,144,226,0.2);
+            border: 3px solid #4a90e2;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5aa0;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid #b8d4f1;
+            border-radius: 15px;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 3px 15px rgba(74,144,226,0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%);
+            color: #fff;
+            border: 2px solid #ffd700;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(74,144,226,0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(74,144,226,0.4);
+            background: linear-gradient(135deg, #5b9dd9 0%, #4a90e2 100%);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c5aa0 0%, #4a90e2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-top: 4px solid #ffd700;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: #fff;
+            color: #4a90e2;
+            text-align: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.3rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border: 2px solid #ffd700;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 20px rgba(255,215,0,0.5);
+            background: #ffd700;
+            color: #2c5aa0;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .slide {
+                font-size: 1.6rem;
+            }
+
+            .slide span {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Blue Lotus</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Blue Lotus Asian Bistro</h1>
+            <p>Experience Authentic Asian Flavors with a Modern Twist</p>
+            <a href="#menu" class="btn">Discover Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <h3>🥟 Appetizers</h3>
+                <div class="menu-item">
+                    <span>Gyoza (Pork or Veggie)</span>
+                    <span>$8</span>
+                </div>
+                <div class="menu-item">
+                    <span>Spring Rolls (4 pcs)</span>
+                    <span>$7</span>
+                </div>
+                <div class="menu-item">
+                    <span>Edamame with Sea Salt</span>
+                    <span>$6</span>
+                </div>
+                <div class="menu-item">
+                    <span>Takoyaki (Octopus Balls)</span>
+                    <span>$10</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <h3>🍜 Main Dishes</h3>
+                <div class="menu-item">
+                    <span>Tonkotsu Ramen</span>
+                    <span>$16</span>
+                </div>
+                <div class="menu-item">
+                    <span>Pad Thai Noodles</span>
+                    <span>$14</span>
+                </div>
+                <div class="menu-item">
+                    <span>Korean BBQ Beef Bowl</span>
+                    <span>$18</span>
+                </div>
+                <div class="menu-item">
+                    <span>Teriyaki Salmon Bento</span>
+                    <span>$20</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <h3>🍱 Sushi & Rolls</h3>
+                <div class="menu-item">
+                    <span>California Roll (8 pcs)</span>
+                    <span>$12</span>
+                </div>
+                <div class="menu-item">
+                    <span>Spicy Tuna Roll</span>
+                    <span>$14</span>
+                </div>
+                <div class="menu-item">
+                    <span>Dragon Roll</span>
+                    <span>$16</span>
+                </div>
+                <div class="menu-item">
+                    <span>Sashimi Platter</span>
+                    <span>$22</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <div class="slide">
+                    <span>🍜</span>
+                    <div>Fresh Ramen</div>
+                </div>
+                <div class="slide">
+                    <span>🍱</span>
+                    <div>Bento Boxes</div>
+                </div>
+                <div class="slide">
+                    <span>🍣</span>
+                    <div>Sushi Selection</div>
+                </div>
+                <div class="slide">
+                    <span>🥟</span>
+                    <div>Handmade Dumplings</div>
+                </div>
+                <div class="slide">
+                    <span>🍵</span>
+                    <div>Tea Ceremony</div>
+                </div>
+                <div class="slide">
+                    <span>🏮</span>
+                    <div>Cozy Atmosphere</div>
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Our Story</h2>
+        <div class="about-content">
+            <p>Welcome to Blue Lotus, where traditional Asian cuisine meets contemporary dining. Since 2016, we've been dedicated to bringing the authentic flavors of Japan, Thailand, Korea, and China to your table with a modern twist.</p>
+            <br>
+            <p>Our chefs combine time-honored recipes with fresh, locally-sourced ingredients to create dishes that honor tradition while embracing innovation. From our signature Tonkotsu Ramen to our expertly crafted sushi rolls, every dish tells a story of passion and precision.</p>
+            <br>
+            <p>Step into our tranquil space adorned with traditional Asian décor, where the aroma of fresh ingredients and the peaceful ambiance transport you to the heart of Asia. Join us for an unforgettable culinary journey!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Visit Us</h2>
+        <div class="contact-container">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.8526672757007!2d-73.98859228459375!3d40.74726797932827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9178c92c5%3A0x1cfefb33051c6618!2sKoreatown%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1696338724154!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required placeholder="Your message or reservation request"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="TikTok">🎵</a>
+                    <a href="#" title="Yelp">⭐</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <ul class="hours-list">
+                    <li>Monday - Thursday: 11:30 AM - 10:00 PM</li>
+                    <li>Friday - Saturday: 11:30 AM - 11:00 PM</li>
+                    <li>Sunday: 12:00 PM - 9:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>📍 350 5th Ave, New York, NY 10118</p>
+                <p>📞 (555) 789-0123</p>
+                <p>✉️ info@bluelotus.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slider = document.getElementById('slider');
+        const dotsContainer = document.getElementById('sliderDots');
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto-advance slider
+        setInterval(() => changeSlide(1), 5000);
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
