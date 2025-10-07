@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Lotus - Modern Asian Bistro</title>
+    <title>Mangunrok - Modern Asian Bistro</title>
     <style>
         * {
             margin: 0;
@@ -14,20 +14,20 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2d3748;
-            background: linear-gradient(180deg, #e6f3ff 0%, #f0f8ff 100%);
+            color: #1a1a1a;
+            background: linear-gradient(180deg, #f5f0e8 0%, #faf8f3 100%);
         }
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%);
-            color: #fff;
+            background: linear-gradient(135deg, #2c1810 0%, #2c1810 100%);
+            color: #f5e6d3;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(74,144,226,0.3);
-            border-bottom: 3px solid #2c5aa0;
+            box-shadow: 0 2px 15px rgba(139,0,0,0.4);
+            border-bottom: 3px solid #a81010;
         }
 
         nav {
@@ -42,7 +42,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #fff;
+            color: #a81010;
             letter-spacing: 1px;
             display: flex;
             align-items: center;
@@ -50,7 +50,7 @@
         }
 
         .logo::before {
-            content: '🪷';
+            content: '🏮';
             font-size: 2rem;
         }
 
@@ -61,7 +61,7 @@
         }
 
         .nav-links a {
-            color: #fff;
+            color: #f5e6d3;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 1rem;
@@ -76,7 +76,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #ffd700;
+            background: #a81010;
             transition: width 0.3s;
         }
 
@@ -94,7 +94,7 @@
         .hamburger span {
             width: 28px;
             height: 3px;
-            background: #fff;
+            background: #a81010;
             border-radius: 3px;
             transition: 0.3s;
         }
@@ -102,34 +102,39 @@
         /* Hero Section */
         .hero {
             min-height: 550px;
-            background: linear-gradient(135deg, #5b9dd9 0%, #4a90e2 50%, #3b7ac9 100%);
+            /* Background image with dark gradient overlay for contrast */
+            background-image: linear-gradient(rgba(10,10,10,0.55), rgba(20,12,10,0.55)), url('https://cdn.vox-cdn.com/uploads/chorus_asset/file/4269647/2015-11-12-roku-005.0.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
+            color: #f5e6d3;
             position: relative;
             padding: 2rem;
             overflow: hidden;
+            border-bottom: 4px solid #a81010;
         }
 
         .hero::before {
-            content: '🪷 🥢 🍜 🥟 🍱 🪷 🥢 🍜 🥟 🍱';
+            /* content: '🏮 🥢 🍜 🥟 🍱 🏮 🥢 🍜 🥟 🍱'; */
             position: absolute;
             font-size: 2.5rem;
             top: 15%;
             animation: slide-left 30s infinite linear;
-            opacity: 0.2;
+            opacity: 0.12; /* reduced so background image remains visible */
             white-space: nowrap;
         }
 
         .hero::after {
-            content: '🏮 🎋 🌸 ⛩️ 🍵 🏮 🎋 🌸 ⛩️ 🍵';
+            /* content: '🏮 🎋 🌸 ⛩️ 🍵 🏮 🎋 🌸 ⛩️ 🍵'; */
             position: absolute;
             font-size: 2rem;
             bottom: 15%;
             animation: slide-right 35s infinite linear;
-            opacity: 0.2;
+            opacity: 0.12; /* reduced so background image remains visible */
             white-space: nowrap;
         }
 
@@ -166,22 +171,22 @@
         .btn {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: #fff;
-            color: #4a90e2;
+            background: linear-gradient(135deg, #2c1810 0%, #2c1810 100%);
+            color: #a81010;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            border: 2px solid #ffd700;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+            border: 2px solid #a81010;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
-            background: #ffd700;
-            color: #2c5aa0;
+            box-shadow: 0 6px 30px rgba(212,175,55,0.5);
+            background: #a81010;
+            color: #1a1a1a;
         }
 
         /* Section Styling */
@@ -195,24 +200,24 @@
             font-size: 2.5rem;
             margin-bottom: 3rem;
             text-align: center;
-            color: #2c5aa0;
+            color: #2c1810;
             font-weight: 700;
             position: relative;
         }
 
         h2::before {
-            content: '🪷';
+            content: '🏮';
             margin-right: 0.5rem;
         }
 
         h2::after {
-            content: '🪷';
+            content: '🏮';
             margin-left: 0.5rem;
         }
 
         /* Menu Section */
         #menu {
-            background: #fff;
+            background: #faf8f3;
         }
 
         .menu-grid {
@@ -222,12 +227,12 @@
         }
 
         .menu-card {
-            background: linear-gradient(135deg, #fff 0%, #e6f3ff 100%);
+            background: linear-gradient(135deg, #fff 0%, #f5f0e8 100%);
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(74,144,226,0.15);
+            box-shadow: 0 4px 20px rgba(139,0,0,0.15);
             transition: all 0.3s;
-            border: 2px solid #b8d4f1;
+            border: 2px solid #a81010;
             position: relative;
         }
 
@@ -238,17 +243,17 @@
             left: 20px;
             right: 20px;
             height: 4px;
-            background: linear-gradient(90deg, #ffd700 0%, #4a90e2 50%, #ffd700 100%);
+            background: linear-gradient(90deg, #2c1810 0%, #a81010 50%, #2c1810 100%);
             border-radius: 2px;
         }
 
         .menu-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(74,144,226,0.25);
+            box-shadow: 0 8px 30px rgba(139,0,0,0.25);
         }
 
         .menu-card h3 {
-            color: #2c5aa0;
+            color: #2c1810;
             margin-bottom: 1.5rem;
             font-size: 1.6rem;
             font-weight: 700;
@@ -260,7 +265,7 @@
             justify-content: space-between;
             margin: 1rem 0;
             padding: 0.8rem 0;
-            border-bottom: 1px solid #d4e6f7;
+            border-bottom: 1px solid #e8dcc8;
         }
 
         .menu-item:last-child {
@@ -268,18 +273,18 @@
         }
 
         .menu-item span:first-child {
-            color: #2d3748;
+            color: #2d2d2d;
         }
 
         .menu-item span:last-child {
-            color: #4a90e2;
+            color: #2c1810;
             font-weight: 700;
             font-size: 1.1rem;
         }
 
         /* Gallery Section */
         #gallery {
-            background: #f0f8ff;
+            background: #f5f0e8;
         }
 
         .slider-container {
@@ -288,8 +293,8 @@
             margin: 0 auto;
             overflow: hidden;
             border-radius: 20px;
-            box-shadow: 0 6px 30px rgba(74,144,226,0.2);
-            border: 3px solid #4a90e2;
+            box-shadow: 0 6px 30px rgba(139,0,0,0.3);
+            border: 3px solid #a81010;
         }
 
         .slider {
@@ -304,30 +309,39 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
             color: #fff;
+            padding: 2rem;
+            font-size: 1.8rem;
             font-weight: 600;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
-
-        .slide span {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .slide:nth-child(1) { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .slide:nth-child(2) { background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%); }
-        .slide:nth-child(3) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-        .slide:nth-child(4) { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-        .slide:nth-child(5) { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
-        .slide:nth-child(6) { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
 
         .slider-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.95);
-            color: #4a90e2;
-            border: 2px solid #ffd700;
+            background: rgba(245,230,211,0.95);
+            color: #2c1810;
+            border: 2px solid #a81010;
             padding: 1rem;
             cursor: pointer;
             font-size: 1.5rem;
@@ -338,12 +352,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
         }
 
         .slider-btn:hover {
-            background: #ffd700;
-            color: #2c5aa0;
+            background: #a81010;
+            color: #1a1a1a;
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -359,12 +373,12 @@
             display: inline-block;
             width: 12px;
             height: 12px;
-            background: #b8d4f1;
+            background: #e8dcc8;
             border-radius: 50%;
             margin: 0 6px;
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid #4a90e2;
+            border: 2px solid #2c1810;
         }
 
         .dot:hover {
@@ -372,13 +386,13 @@
         }
 
         .dot.active {
-            background: #4a90e2;
+            background: #a81010;
             transform: scale(1.3);
         }
 
         /* About Section */
         #about {
-            background: #fff;
+            background: #faf8f3;
         }
 
         .about-content {
@@ -387,16 +401,16 @@
             text-align: center;
             font-size: 1.2rem;
             line-height: 1.9;
-            background: linear-gradient(135deg, #fff 0%, #e6f3ff 100%);
+            background: linear-gradient(135deg, #fff 0%, #f5f0e8 100%);
             padding: 3rem;
             border-radius: 20px;
-            border: 2px solid #b8d4f1;
-            box-shadow: 0 4px 20px rgba(74,144,226,0.1);
+            border: 2px solid #a81010;
+            box-shadow: 0 4px 20px rgba(139,0,0,0.1);
         }
 
         /* Contact Section */
         #contact {
-            background: #f0f8ff;
+            background: #f5f0e8;
         }
 
         .contact-container {
@@ -410,8 +424,8 @@
             height: 450px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 25px rgba(74,144,226,0.2);
-            border: 3px solid #4a90e2;
+            box-shadow: 0 6px 25px rgba(139,0,0,0.2);
+            border: 3px solid #a81010;
         }
 
         .contact-form {
@@ -428,14 +442,14 @@
         .form-group label {
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #2c5aa0;
+            color: #2c1810;
             font-size: 1rem;
         }
 
         .form-group input,
         .form-group textarea {
             padding: 1rem;
-            border: 2px solid #b8d4f1;
+            border: 2px solid #a81010;
             border-radius: 15px;
             font-family: inherit;
             transition: all 0.3s;
@@ -446,8 +460,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #4a90e2;
-            box-shadow: 0 3px 15px rgba(74,144,226,0.2);
+            border-color: #2c1810;
+            box-shadow: 0 3px 15px rgba(139,0,0,0.2);
         }
 
         .form-group textarea {
@@ -457,30 +471,31 @@
 
         .submit-btn {
             padding: 1rem 2rem;
-            background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%);
-            color: #fff;
-            border: 2px solid #ffd700;
+            background: linear-gradient(135deg, #2c1810 0%, #2c1810 100%);
+            color: #a81010;
+            border: 2px solid #a81010;
             border-radius: 30px;
             font-weight: 600;
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(74,144,226,0.3);
+            box-shadow: 0 4px 20px rgba(139,0,0,0.3);
         }
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(74,144,226,0.4);
-            background: linear-gradient(135deg, #5b9dd9 0%, #4a90e2 100%);
+            box-shadow: 0 6px 30px rgba(212,175,55,0.4);
+            background: #a81010;
+            color: #1a1a1a;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #2c5aa0 0%, #4a90e2 100%);
-            color: #fff;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c1810 100%);
+            color: #f5e6d3;
             padding: 3rem 2rem;
             margin-top: 3rem;
-            border-top: 4px solid #ffd700;
+            border-top: 4px solid #a81010;
         }
 
         .footer-content {
@@ -492,7 +507,7 @@
         }
 
         .footer-section h3 {
-            color: #ffd700;
+            color: #a81010;
             margin-bottom: 1.5rem;
             font-size: 1.3rem;
             font-weight: 600;
@@ -511,22 +526,22 @@
             justify-content: center;
             width: 45px;
             height: 45px;
-            background: #fff;
-            color: #4a90e2;
+            background: #f5e6d3;
+            color: #2c1810;
             text-align: center;
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 1.3rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            border: 2px solid #ffd700;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            border: 2px solid #a81010;
         }
 
         .social-links a:hover {
             transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 5px 20px rgba(255,215,0,0.5);
-            background: #ffd700;
-            color: #2c5aa0;
+            box-shadow: 0 5px 20px rgba(212,175,55,0.6);
+            background: #a81010;
+            color: #1a1a1a;
         }
 
         .hours-list {
@@ -535,7 +550,7 @@
 
         .hours-list li {
             padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(212,175,55,0.3);
             font-size: 1rem;
         }
 
@@ -550,7 +565,7 @@
                 left: -100%;
                 top: 70px;
                 flex-direction: column;
-                background: linear-gradient(135deg, #4a90e2 0%, #5b9dd9 100%);
+                background: linear-gradient(135deg, #2c1810 0%, #2c1810 100%);
                 width: 100%;
                 text-align: center;
                 transition: 0.3s;
@@ -595,11 +610,12 @@
             }
 
             .slide {
-                font-size: 1.6rem;
+                height: 400px;
             }
 
-            .slide span {
-                font-size: 3rem;
+            .slide-caption {
+                font-size: 1.4rem;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -608,7 +624,7 @@
     <!-- Header & Navigation -->
     <header>
         <nav>
-            <div class="logo">Blue Lotus</div>
+            <div class="logo">Mangunrok</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
@@ -626,7 +642,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Blue Lotus Asian Bistro</h1>
+            <h1>Mangunrok Asian Bistro</h1>
             <p>Experience Authentic Asian Flavors with a Modern Twist</p>
             <a href="#menu" class="btn">Discover Menu</a>
         </div>
@@ -663,7 +679,7 @@
                     <span>$16</span>
                 </div>
                 <div class="menu-item">
-                    <span>Pad Thai Noodles</span>
+                    <span>Curry with Rice</span>
                     <span>$14</span>
                 </div>
                 <div class="menu-item">
@@ -704,28 +720,28 @@
         <div class="slider-container">
             <div class="slider" id="slider">
                 <div class="slide">
-                    <span>🍜</span>
-                    <div>Fresh Ramen</div>
+                    <img src="https://images.unsplash.com/photo-1572830191837-0b705965d1a8?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fresh Ramen">
+                    <div class="slide-caption">Fresh Tonkotsu Ramen</div>
                 </div>
                 <div class="slide">
-                    <span>🍱</span>
-                    <div>Bento Boxes</div>
+                    <img src="https://images.unsplash.com/photo-1596463059283-da257325bab8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bento Box">
+                    <div class="slide-caption">Traditional Bento Boxes</div>
                 </div>
                 <div class="slide">
-                    <span>🍣</span>
-                    <div>Sushi Selection</div>
+                    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sushi">
+                    <div class="slide-caption">Premium Sushi Selection</div>
                 </div>
                 <div class="slide">
-                    <span>🥟</span>
-                    <div>Handmade Dumplings</div>
+                    <img src="https://images.unsplash.com/photo-1638502521795-89107ac5e246?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dumplings">
+                    <div class="slide-caption">Handmade Dumplings</div>
                 </div>
                 <div class="slide">
-                    <span>🍵</span>
-                    <div>Tea Ceremony</div>
+                    <img src="https://images.unsplash.com/photo-1746256856691-032ecff4240f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Curry">
+                    <div class="slide-caption">Authentic Curry Rice</div>
                 </div>
                 <div class="slide">
-                    <span>🏮</span>
-                    <div>Cozy Atmosphere</div>
+                    <img src="https://media.architecturaldigest.com/photos/572a34ffe50e09d42bdfb5e0/master/pass/japanese-restaurants-la-01.jpg" alt="Asian Dining">
+                    <div class="slide-caption">Beautiful Interior</div>
                 </div>
             </div>
             <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
@@ -738,7 +754,7 @@
     <section id="about">
         <h2>Our Story</h2>
         <div class="about-content">
-            <p>Welcome to Blue Lotus, where traditional Asian cuisine meets contemporary dining. Since 2016, we've been dedicated to bringing the authentic flavors of Japan, Thailand, Korea, and China to your table with a modern twist.</p>
+            <p>Welcome to Mangunrok, where traditional Asian cuisine meets contemporary dining. Since 2016, we've been dedicated to bringing the authentic flavors of Japan, Korea, and China to your table with a modern twist.</p>
             <br>
             <p>Our chefs combine time-honored recipes with fresh, locally-sourced ingredients to create dishes that honor tradition while embracing innovation. From our signature Tonkotsu Ramen to our expertly crafted sushi rolls, every dish tells a story of passion and precision.</p>
             <br>
@@ -751,14 +767,7 @@
         <h2>Visit Us</h2>
         <div class="contact-container">
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.8526672757007!2d-73.98859228459375!3d40.74726797932827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9178c92c5%3A0x1cfefb33051c6618!2sKoreatown%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1696338724154!5m2!1sen!2sus" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.654543485502!2d-73.9863304!3d40.7476264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a8f913666b%3A0x2d2adcb5bc0150f8!2sFood%20Gallery%2032!5e0!3m2!1sen!2sus!4v1759802027959!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
@@ -801,9 +810,9 @@
             </div>
             <div class="footer-section">
                 <h3>Location</h3>
-                <p>📍 350 5th Ave, New York, NY 10118</p>
+                <p>📍 11 W 32nd St, New York, NY 10001</p>
                 <p>📞 (555) 789-0123</p>
-                <p>✉️ info@bluelotus.com</p>
+                <p>✉️ info@mangunrok.com</p>
             </div>
         </div>
     </footer>
